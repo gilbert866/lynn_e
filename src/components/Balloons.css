@@ -1,0 +1,36 @@
+/* Balloon.css */
+@keyframes float {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    bottom: 110%;
+    transform: translateX(-20px);
+  }
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: red;
+  opacity: 0.8;
+  animation: float 7s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background-color: gray;
+  left: 50%;
+  top: 70px;
+  transform: translateX(-50%);
+}

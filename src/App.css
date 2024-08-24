@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("/public/images/background.jpg"); /* Optional: Add a romantic background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h6 {
+  margin-bottom: 40px;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heart {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 75%, 18% 100%, 0% 38%);
+  animation: fall 5s linear infinite;
+  opacity: 0.8;
+}
+
+.heart1 {
+  left: 20%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.heart2 {
+  left: 50%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.heart3 {
+  left: 70%;
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+.card-container {
+  perspective: 1000px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  background-color: #ffe6e6;
+  border: 1px solid #ff9999;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover {
+  transform: rotateY(-180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
 }
 
-.App-link {
-  color: #61dafb;
+.front {
+  background-color: #ffcccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back {
+  background-color: #ff9999;
+  transform: rotateY(180deg);
 }
