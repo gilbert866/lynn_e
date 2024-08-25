@@ -89,3 +89,14 @@ h6 {
   background-color: #ff9999;
   transform: rotateY(180deg);
 }
+.slick-dots li button:before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff6666; /* Custom color for active dot */
+}
+
+.ReactModal__Overlay {
+  z-index: 1000 !important; /* Ensure modal is above other content */
+}

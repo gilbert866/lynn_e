@@ -1,14 +1,30 @@
 import React from "react";
 import { Card, CardContent, Typography, Avatar } from "@mui/material";
+import CustomImageCarousel from "./CustomImageCarousel";
 
 const BirthdayCard = ({ name }) => {
+  // Array of image URLs to be displayed in the avatar circle
+  const images = [
+    "/images/pic.jpeg",
+    "/images/pic2.png",
+    "/images/pic3.png",
+    // Add more image paths as needefw:q:
+  ];
+
   return (
     <Card sx={{ maxWidth: 400, margin: "auto", mt: 5, padding: 3 }}>
-      <Avatar
-        alt={name}
-        src="/images/pic.jpeg"
-        sx={{ width: 100, height: 100, margin: "auto" }}
-      />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "20px",
+          fontStyle: "italic",
+        }}
+      >
+        <Avatar sx={{ width: 150, height: 150 }}>
+          <CustomImageCarousel images={images} />
+        </Avatar>
+      </div>
       <CardContent>
         <Typography variant="h4" component="div" gutterBottom>
           Happy Birthday, {name}!

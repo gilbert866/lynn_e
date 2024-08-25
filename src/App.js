@@ -5,7 +5,16 @@ import MusicPlayer from "./components/MusicPlayer";
 import LoopingTypewriter from "./components/LoopingTypewriter";
 import { Container, Typography } from "@mui/material";
 import Balloon from "./components/Balloons.jsx";
+import Hearts from "./components/Hearts";
 import "./App.css";
+
+const balloons = [
+  { color: "#ff4d4d", left: "10%", animationDelay: "0s" },
+  { color: "#ffcc00", left: "30%", animationDelay: "1s" },
+  { color: "#66b3ff", left: "50%", animationDelay: "2s" },
+  { color: "#ff66b3", left: "70%", animationDelay: "3s" },
+  { color: "#99ff99", left: "90%", animationDelay: "4s" },
+];
 function App() {
   return (
     <Container
@@ -32,17 +41,14 @@ function App() {
       >
         Wishing you a day filled with love and joy!
       </Typography>
-
       <Animation />
       <BirthdayCard name="Lynne" />
-
       <MusicPlayer />
-      {/* Adding Balloons */}
-      <Balloon color="#ff4d4d" left="10%" animationDelay="0s" />
-      <Balloon color="#ffcc00" left="30%" animationDelay="1s" />
-      <Balloon color="#66b3ff" left="50%" animationDelay="2s" />
-      <Balloon color="#ff66b3" left="70%" animationDelay="3s" />
-      <Balloon color="#99ff99" left="90%" animationDelay="4s" />
+      {/* Adding Balloons */}{" "}
+      {balloons.map((balloon, index) => (
+        <Balloon key={index} {...balloon} />
+      ))}
+      <Hearts /> {/* Add the Hearts component here */}
     </Container>
   );
 }
