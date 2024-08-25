@@ -6,8 +6,7 @@ const BirthdayCard = ({ name }) => {
   // Array of image URLs to be displayed in the avatar circle
   const images = [
     "/images/pic.jpeg",
-    "/images/pic2.png",
-    "/images/pic3.png",
+    "/images/pic2.jpg",
     // Add more image paths as needefw:q:
   ];
 

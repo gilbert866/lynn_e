@@ -1,7 +1,7 @@
 import React from "react";
 import BirthdayCard from "./components/BirthdayCard";
 import Animation from "./components/Animation";
-import MusicPlayer from "./components/MusicPlayer";
+//import MusicPlayer from "./components/MusicPlayer";
 import LoopingTypewriter from "./components/LoopingTypewriter";
 import { Container, Typography } from "@mui/material";
 import Balloon from "./components/Balloons.jsx";
@@ -43,7 +43,7 @@ function App() {
       </Typography>
       <Animation />
       <BirthdayCard name="Lynne" />
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
       {/* Adding Balloons */}{" "}
       {balloons.map((balloon, index) => (
         <Balloon key={index} {...balloon} />
